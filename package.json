@@ -1,0 +1,33 @@
+{
+  "name": "hexlet-messenger",
+  "version": "0.0.1",
+  "description": "messenger web app",
+  "type": "module",
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ushachev/layout-designer-project-lvl3.git"
+  },
+  "author": "Vitaliy Ushachev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ushachev/layout-designer-project-lvl3/issues"
+  },
+  "homepage": "https://github.com/ushachev/layout-designer-project-lvl3#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.7",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0",
+    "gulp-pug": "^5.0.0",
+    "gulp-sass": "^5.0.0",
+    "pug": "^3.0.2",
+    "pug-lint": "^2.6.0",
+    "sass": "^1.44.0",
+    "stylelint": "^14.1.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard-scss": "^3.0.0",
+    "stylelint-order": "^5.0.0",
+    "surge": "^0.23.0"
+  }
+}
