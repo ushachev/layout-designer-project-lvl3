@@ -9,6 +9,6 @@ develop:
 	npx gulp develop
 
 build:
-	npx gulp
+	NODE_ENV=production npx gulp
 
 .PHONY: build

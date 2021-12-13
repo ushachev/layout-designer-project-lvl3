@@ -4,6 +4,8 @@ import gulpSass from 'gulp-sass';
 import bs from 'browser-sync';
 import del from 'del';
 import pug from 'gulp-pug';
+import purgecss from 'gulp-purgecss';
+import gulpif from 'gulp-if';
 
 const {
   src, dest, series, parallel, watch,
@@ -11,10 +13,16 @@ const {
 const sass = gulpSass(dartSass);
 const browserSync = bs.create();
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 const clean = () => del(['build']);
 
 const buildStyles = () => src('app/scss/app.scss')
   .pipe(sass.sync().on('error', sass.logError))
+  .pipe(gulpif(isProduction, purgecss({
+    content: ['app/pug/**/*.pug'],
+    variables: true,
+  })))
   .pipe(dest('build/css'))
   .pipe(browserSync.stream());
 
