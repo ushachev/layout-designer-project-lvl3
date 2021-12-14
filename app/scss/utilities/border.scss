@@ -1,0 +1,13 @@
+@use "sass:map";
+
+@each $breakpoint in map.keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    @if $breakpoint != "xs" {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+      .border#{$infix}-left {
+        border-left: 1px solid $border-color !important;
+      }
+    }
+  }
+}

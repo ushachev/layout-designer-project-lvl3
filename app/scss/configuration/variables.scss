@@ -1,0 +1,27 @@
+@use "sass:map";
+
+$theme-colors: (
+  "primary": #4545a5,
+  "secondary": #6c757d,
+  "success": #28a745,
+  "info": #17a2b8,
+  "warning": #ffc107,
+  "danger": #dc3545,
+  "light": #fbfbfb,
+  "dark": #343a40,
+  "white": #fff,
+  "gray": #efefef,
+);
+$grid-breakpoints: (
+  xs: 0,
+  md: 768px,
+  xxl: 1600px
+);
+$container-max-widths: (
+  xxl: 1540px
+);
+$body-bg: map.get($theme-colors, "gray");
+$body-color: map.get($theme-colors, "dark");
+$border-radius: 1rem;
+$border-color: map.get($theme-colors, "gray");
+$enable-shadows: true;

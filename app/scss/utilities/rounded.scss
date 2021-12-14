@@ -1,0 +1,5 @@
+.rounded-md {
+  @include media-breakpoint-up(md) {
+    border-radius: $border-radius;
+  }
+}
