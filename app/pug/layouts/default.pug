@@ -7,10 +7,11 @@ html(lang='ru')
     title Hexlet Chat
   body
     .container-xxl.vh-100.p-0.p-md-4
-      .d-flex.flex-column.flex-wrap.h-100.overflow-hidden.rounded-md.bg-white
-        header.order-last.order-md-first.col-md-4.bg-primary
-          h1 Hexlet Chat
-        aside.flex-grow-1.col-md-4.pt-5.px-4
-          block aside
-        main.d-none.d-md-block.h-100.col-md-8.border-md-left
+      .d-flex.overflow-hidden.h-100.rounded-md.bg-white
+        .col.col-md-4.d-flex.flex-column.mh-100.pb-md-4
+          header.order-last.order-md-first.bg-primary
+            h1 Hexlet Chat
+          aside.hide-scrollbar.pt-5.px-4
+            block aside
+        main.d-none.d-md-block.mh-100.col-md-8.border-md-left
           block content

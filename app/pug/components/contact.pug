@@ -1,0 +1,8 @@
+include avatar.pug
+
+mixin contact(contact = {})
+  a.contact.d-flex.align-items-center.mb-3.ps-4.text-decoration-none.shadow-sm(href='#')
+    +avatar(contact.avatar, contact.name)(width=50, height=50)
+    .p-4
+      h3.h6.mb-0= contact.name
+      .contact-status= contact.status

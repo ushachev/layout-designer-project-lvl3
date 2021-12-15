@@ -1,4 +1,11 @@
 extends layouts/default.pug
 
+include components/search.pug
+
+block aside
+  h2 Контакты
+  +search('Поиск по контактам', 'search-contact')
+  include parts/contact-list.pug
+
 block content
   h2 Приветствие

@@ -1,0 +1,28 @@
+@use "sass:map";
+
+.contact {
+  @include transitions(background-color, color, opacity);
+
+  color: inherit;
+
+  &:hover {
+    color: map.get($theme-colors, "light");
+
+    background-color: map.get($theme-colors, "primary");
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.contact-status {
+  @include transitions(color);
+
+  color: map.get($theme-colors, "secondary");
+  font-size: 0.8rem;
+
+  .contact:hover & {
+    color: map.get($theme-colors, "gray");
+  }
+}

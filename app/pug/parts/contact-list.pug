@@ -1,0 +1,9 @@
+include ../data/contacts.pug
+include ../components/contact.pug
+
+ul.list-unstyled.mt-5
+  each contactGroup, key in contacts
+    li.mb-5
+      h3.text-muted.h6.mb-4.fw-normal= key
+      each contact in contactGroup
+        +contact(contact)

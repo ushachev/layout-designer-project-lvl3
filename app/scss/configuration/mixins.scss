@@ -1,0 +1,26 @@
+@use "sass:list";
+
+@mixin hide-scrollbar() {
+  & {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin transitions($transitionProperties...) {
+  $transitions: ();
+
+  @each $transition in $transitionProperties {
+    $transition-item: $transition $transition-duration;
+    $transitions: list.append($transitions, $transition-item, comma);
+  }
+
+  transition: $transitions;
+}
