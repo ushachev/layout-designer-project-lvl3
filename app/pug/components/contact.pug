@@ -5,4 +5,4 @@ mixin contact(contact = {})
     +avatar(contact.avatar, contact.name)(width=50, height=50)
     .p-4
       h3.h6.mb-0= contact.name
-      .contact-status= contact.status
+      .contact-status.small= contact.status

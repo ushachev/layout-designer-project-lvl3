@@ -20,7 +20,6 @@
   @include transitions(color);
 
   color: map.get($theme-colors, "secondary");
-  font-size: 0.8rem;
 
   .contact:hover & {
     color: map.get($theme-colors, "gray");

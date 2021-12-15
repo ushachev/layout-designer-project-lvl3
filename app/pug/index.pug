@@ -8,4 +8,7 @@ block aside
   include parts/contact-list.pug
 
 block content
-  h2 Приветствие
+  .d-flex.flex-column.justify-content-center.align-items-center.h-100
+    +avatar(src='images/avatar_1.jpg', alt='Ваш автар' width=200, height=200)
+    span.h6.mt-3 Привет, Кодовёнок
+    span.text-secondary.small Выбери чат, чтобы начать общаться
