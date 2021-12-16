@@ -1,11 +1,15 @@
 extends layouts/default.pug
 
-include components/search.pug
+block navigation
+  - const activeNavItem = 'people'
+
+  +menu('people', 'chat')
 
 block aside
   h2 Контакты
   +search('Поиск по контактам', 'search-contact')
-  include parts/contact-list.pug
+  +tab-pane('people')
+    include parts/contact-list.pug
 
 block content
   .d-flex.flex-column.justify-content-center.align-items-center.h-100

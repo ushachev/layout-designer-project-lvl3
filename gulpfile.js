@@ -7,6 +7,7 @@ import pug from 'gulp-pug';
 import purgecss from 'gulp-purgecss';
 import gulpif from 'gulp-if';
 import changed from 'gulp-changed';
+import svgSprite from 'gulp-svg-sprite';
 
 const {
   src, dest, series, parallel, watch,
@@ -36,7 +37,19 @@ const buildImages = () => src('app/assets/images/*')
   .pipe(changed('build/images'))
   .pipe(dest('build/images'));
 
-const build = series(clean, parallel(buildStyles, buildHtml, buildImages));
+const buildSprite = () => src('app/assets/icons/*.svg')
+  .pipe(svgSprite({
+    mode: {
+      symbol: {
+        sprite: '../sprite.svg',
+      },
+    },
+  }))
+  .pipe(dest('build/images'));
+
+const build = series(clean, parallel(
+  buildStyles, buildHtml, buildImages, buildSprite,
+));
 
 const runServer = () => {
   browserSync.init({
@@ -46,6 +59,7 @@ const runServer = () => {
 
   watch('app/scss/**/*.scss', buildStyles);
   watch('app/pug/**/*.pug', buildHtml);
+  watch('app/assets/icons/*.svg', buildSprite);
 };
 
 export const develop = series(build, runServer);

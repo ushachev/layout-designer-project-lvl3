@@ -1,0 +1,12 @@
+mixin menu(...items)
+  nav
+    ul.nav(role='tablist')
+      each item in items
+        li.nav-item(role='presentation')
+          -
+            const { tabId, target, icon, text } = navItems[item]
+            const isSelected = item === activeNavItem
+
+          button.btn.d-flex.align-items-center.ps-3.py-0.pe-4.pe-md-3.border-0.text-reset(id=tabId, data-bs-toggle='tab', data-bs-target=`#${target}`, type='button', role='tab', aria-controls=target, aria-selected=isSelected)
+            +icon(icon)(width=25, height=25)
+            small.d-none.d-md-block.ms-2= text

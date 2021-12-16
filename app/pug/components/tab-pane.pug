@@ -1,0 +1,7 @@
+mixin tab-pane(item)
+  -
+    const tabPaneClass = item === activeNavItem ? 'show active' : ''
+    const { tabId, target } = navItems[item]
+
+  .tab-pane.fade(class=tabPaneClass, id=target, role='tabpanel', aria-labelledby=tabId)
+    block
