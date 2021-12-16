@@ -6,10 +6,14 @@ block navigation
   +menu('people', 'chat')
 
 block aside
-  h2 Контакты
-  +search('Поиск по контактам', 'search-contact')
   +tab-pane('people')
+    h2 Контакты
+    +search('Поиск по контактам', 'search-contact')
     include parts/contact-list.pug
+  +tab-pane('chat')
+    h2 Чаты
+    +search('Поиск по сообщениям', 'search-message')
+    include parts/chat-list.pug
 
 block content
   .d-flex.flex-column.justify-content-center.align-items-center.h-100

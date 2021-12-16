@@ -1,0 +1,8 @@
+mixin chat(chat = {})
+  a.hovered-card.d-flex.align-items-center.mb-3.ps-4.text-decoration-none.shadow-sm(href='#')
+    +avatar(chat.avatar, chat.name)(width=50, height=50)
+    .p-4.d-flex.flex-column.flex-grow-1.overflow-hidden
+      .d-flex
+        h3.h6.mb-0.text-truncate= chat.name
+        small.ms-auto.ps-2.text-secondary= chat.lastMessageTime
+      small.hovered-card-subtext.text-truncate= chat.lastMessage

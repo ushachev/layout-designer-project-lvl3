@@ -1,0 +1,7 @@
+include ../data/chats.pug
+include ../components/chat.pug
+
+ul.list-unstyled.mt-5
+  each chat in chats
+    li.mb-3
+      +chat(chat)

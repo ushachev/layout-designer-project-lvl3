@@ -1,6 +1,6 @@
 @use "sass:map";
 
-.contact {
+.hovered-card {
   @include transitions(background-color, color, opacity);
 
   color: inherit;
@@ -16,12 +16,16 @@
   }
 }
 
-.contact-status {
+.hovered-card-subtext {
   @include transitions(color);
 
   color: map.get($theme-colors, "secondary");
 
-  .contact:hover & {
+  .hovered-card:hover & {
+    color: map.get($theme-colors, "light");
+  }
+
+  .hovered-card.hovered-card-contact:hover & {
     color: map.get($theme-colors, "gray");
   }
 }

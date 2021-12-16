@@ -16,13 +16,13 @@ html(lang='ru')
   body
     .container-xxl.vh-100.p-0.p-md-4
       .d-flex.overflow-hidden.h-100.rounded-md.bg-white
-        .col.col-md-4.d-flex.flex-column.mh-100.pb-md-4
+        .col-12.col-md-4.d-flex.flex-column.mh-100.pb-md-4
           header.order-last.order-md-first.d-flex.px-3.py-4.bg-primary.text-light
             h1.visually-hidden Hexlet Chat
             a.d-flex.ms-1.me-auto.text-reset(href='/')
               +icon('logo')(width=15, height=25)
             block navigation
-          aside.tab-content.hide-scrollbar.pt-5.px-4
+          aside.tab-content.hide-scrollbar.flex-grow-1.pt-5.px-4
             block aside
         main.d-none.d-md-block.mh-100.col-md-8.border-md-left
           block content
