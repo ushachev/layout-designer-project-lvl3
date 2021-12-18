@@ -15,10 +15,11 @@ $theme-colors: (
 $grid-breakpoints: (
   xs: 0,
   md: 768px,
-  xxl: 1600px
+  xxl: 1400px,
+  xxxl: 1600px,
 );
 $container-max-widths: (
-  xxl: 1540px
+  xxxl: 1540px,
 );
 $body-bg: map.get($theme-colors, "gray");
 $body-color: map.get($theme-colors, "dark");
