@@ -6,7 +6,11 @@ mixin menu(...items)
           -
             const { tabId, target, icon, text } = navItems[item]
             const isSelected = item === activeNavItem
+            const btnClass = {
+              active: isSelected,
+              'd-md-none': item === 'currentChat',
+            }
 
-          button.btn.btn-icon.d-flex.flex-column.flex-xxl-row.align-items-center.ps-3.py-0.pe-4.pe-md-3.border-0.text-reset(class=(isSelected && 'active'), id=tabId, data-bs-toggle='tab', data-bs-target=`#${target}`, type='button', role='tab', aria-controls=target, aria-selected=isSelected)
+          button.btn.btn-icon.d-flex.flex-column.flex-xxl-row.align-items-center.ps-3.py-0.pe-4.pe-md-3.border-0.text-reset(class=btnClass, id=tabId, data-bs-toggle='tab', data-bs-target=`#${target}`, type='button', role='tab', aria-controls=target, aria-selected=isSelected)
             +icon(icon)(width=25, height=25)
             small.d-none.d-md-block.ms-2= text

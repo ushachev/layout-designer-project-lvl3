@@ -1,0 +1,25 @@
+extends layouts/default.pug
+
+block navigation
+  - const activeNavItem = 'chat'
+
+  +menu('currentChat', 'people', 'chat', 'profile')
+
+block aside
+  +tab-pane('currentChat')(class='d-md-none')
+    include parts/message-list.pug
+  +tab-pane('people')
+    h2 Контакты
+    +search('Поиск по контактам', 'search-contact')
+    include parts/contact-list.pug
+  +tab-pane('chat')
+    h2 Чаты
+    +search('Поиск по сообщениям', 'search-message')
+    include parts/chat-list.pug
+  +tab-pane('profile')
+    h2 Профиль
+    +search('Поиск по сообщениям', 'search-message')
+    include parts/profile.pug
+
+block content
+  include parts/message-list.pug

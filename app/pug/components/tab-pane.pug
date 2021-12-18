@@ -1,7 +1,7 @@
 mixin tab-pane(item)
   -
-    const tabPaneClass = item === activeNavItem ? 'show active' : ''
+    const tabPaneClass = item === activeNavItem && 'show active'
     const { tabId, target } = navItems[item]
 
-  .tab-pane.mh-100.hide-scrollbar.fade(class=tabPaneClass, id=target, role='tabpanel', aria-labelledby=tabId)
+  .tab-pane.mh-100.hide-scrollbar.fade(class=tabPaneClass, id=target, role='tabpanel', aria-labelledby=tabId)&attributes(attributes)
     block
