@@ -3,7 +3,7 @@ extends layouts/default.pug
 block navigation
   - const activeNavItem = 'people'
 
-  +menu('people', 'chat')
+  +menu('people', 'chat', 'profile')
 
 block aside
   +tab-pane('people')
@@ -14,9 +14,13 @@ block aside
     h2 Чаты
     +search('Поиск по сообщениям', 'search-message')
     include parts/chat-list.pug
+  +tab-pane('profile')
+    h2 Профиль
+    +search('Поиск по сообщениям', 'search-message')
+    include parts/profile.pug
 
 block content
   .d-flex.flex-column.justify-content-center.align-items-center.h-100
-    +avatar(src='images/avatar_1.jpg', alt='Ваш автар' width=200, height=200)
+    +avatar(src='images/avatar_1.jpg', alt='Ваш аватар', width=200, height=200)
     span.h6.mt-3 Привет, Кодовёнок
     span.text-secondary.small Выбери чат, чтобы начать общаться
