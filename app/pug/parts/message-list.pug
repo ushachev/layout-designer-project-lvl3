@@ -1,1 +1,20 @@
-h2 Сообщения
+-
+  const currentContact = {
+    name: "Вениамин Редакторович",
+    status: "Онлайн",
+    avatar: "/images/avatar_4.jpg"
+  }
+
+.d-flex.flex-column.h-100.overflow-hidden
+  .d-flex.align-items-center.ps-3.border-bottom
+    +avatar(currentContact.avatar, currentContact.name)(width=50, height=50)
+    .p-4.d-flex.flex-column
+      h3.h6.mb-0= currentContact.name
+      small= currentContact.status
+  .flex-grow-1.hide-scrollbar
+    .p-3 сообщение
+  form.d-flex.align-items-center.mx-md-5.ps-2.py-2.py-md-3.pe-3.pe-md-2.border-top
+    label.visually-hidden(for='message') Сообщение
+    input#message.form-control.flex-grow-1.p-3.border-0.bg-white(placeholder='Напишите сообщение...', type='text', name='message')
+    button.btn.d-flex.ms-3.p-2.border-primary.rounded-circle.bg-primary.text-light(type='submit')
+      +icon('cursor')(width=24, height=24)
