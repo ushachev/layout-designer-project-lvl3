@@ -1,0 +1,25 @@
+mixin message({ type, text, time } = {})
+  -
+    const author = type === 'contact' ? currentContact : profile
+    const itemClass = {
+      'align-self-md-end': type === 'user',
+    }
+    const messageClass = {
+      'text-secondary bg-light': type === 'contact',
+      'bg-primary': type === 'user',
+    }
+    const textClass = {
+      'border-bottom text-light': type === 'user',
+    }
+    const timeClass = {
+      'text-gray': type === 'user'
+    }
+    const avatarClass = 'd-none d-md-block align-self-md-end me-3'
+
+  li.col-md-9.d-md-flex.mb-3(class=itemClass)
+    +avatar(author.avatar, author.name)(class=avatarClass, width=50, height=50)
+    .p-4.rounded.shadow-sm(class=messageClass)
+      if type === 'contact'
+        h4.h6.mb-1.text-dark= currentContact.name
+      p.mb-1.pb-2(class=textClass)= text
+      small(class=timeClass)= time

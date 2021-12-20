@@ -1,3 +1,6 @@
+include ../data/messages.pug
+include ../components/message.pug
+
 -
   const currentContact = {
     name: "Вениамин Редакторович",
@@ -11,8 +14,9 @@
     .p-4.d-flex.flex-column
       h3.h6.mb-0= currentContact.name
       small= currentContact.status
-  .flex-grow-1.hide-scrollbar
-    .p-3 сообщение
+  ul.list-unstyled.hide-scrollbar.d-md-flex.flex-md-column.flex-grow-1.mb-0.pt-5.px-5.pb-4
+    each message in messages
+      +message(message)
   form.d-flex.align-items-center.mx-md-5.ps-2.py-2.py-md-3.pe-3.pe-md-2.border-top
     label.visually-hidden(for='message') Сообщение
     input#message.form-control.flex-grow-1.p-3.border-0.bg-white(placeholder='Напишите сообщение...', type='text', name='message')

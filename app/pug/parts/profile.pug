@@ -1,8 +1,6 @@
-include ../data/profile.pug
-
 .card.mt-5.mb-5.pt-3.pb-5.border-0.text-center
   .card-body.mt-1
-    +avatar(src='images/avatar_1.jpg', alt='Ваш аватар', width=90, height=90)
+    +avatar(src=profile.avatar, alt='Ваш аватар', width=90, height=90)
     h3.card-title.h6.my-3= profile.name
     p.card-text.text-muted= profile.description
 .card.pt-4.border-0
