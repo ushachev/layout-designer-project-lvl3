@@ -3,6 +3,6 @@ mixin chat(chat = {})
     +avatar(chat.avatar, chat.name)(width=50, height=50)
     .p-4.d-flex.flex-column.flex-grow-1.overflow-hidden
       .d-flex.pe-3
-        h3.h6.text-truncate= chat.name
+        h3.h6.mb-1.text-truncate= chat.name
         small.ms-auto.ps-2.text-secondary= chat.lastMessageTime
       small.hovered-card-subtext.text-truncate.pe-3= chat.lastMessage

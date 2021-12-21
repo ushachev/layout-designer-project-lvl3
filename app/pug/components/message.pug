@@ -9,7 +9,7 @@ mixin message({ type, text, time } = {})
       'bg-primary': type === 'user',
     }
     const textClass = {
-      'border-bottom text-light': type === 'user',
+      'text-light': type === 'user',
     }
     const timeClass = {
       'text-gray': type === 'user'
@@ -20,6 +20,6 @@ mixin message({ type, text, time } = {})
     +avatar(author.avatar, author.name)(class=avatarClass, width=50, height=50)
     .p-4.rounded.shadow-sm(class=messageClass)
       if type === 'contact'
-        h4.h6.mb-1.text-dark= currentContact.name
-      p.mb-1.pb-2(class=textClass)= text
-      small(class=timeClass)= time
+        h4.h6.text-dark= currentContact.name
+      p.mb-0(class=textClass, style='padding-bottom: 9px;')= text
+      small.d-block.pt-1.border-top(class=timeClass)= time

@@ -111,7 +111,7 @@ ul ul {
 }
 
 small, .small {
-  font-size: 0.8rem;
+  font-size: 0.875em;
 }
 
 a {
@@ -283,6 +283,10 @@ button:not(:disabled),
 
 .overflow-hidden {
   overflow: hidden !important;
+}
+
+.d-block {
+  display: block !important;
 }
 
 .d-flex {
@@ -462,6 +466,10 @@ button:not(:disabled),
 .py-4 {
   padding-top: 1.5rem !important;
   padding-bottom: 1.5rem !important;
+}
+
+.pt-1 {
+  padding-top: 0.25rem !important;
 }
 
 .pt-3 {
