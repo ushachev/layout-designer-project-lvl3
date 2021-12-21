@@ -923,7 +923,7 @@ svg {
   background-color: #4545a5;
 }
 .hovered-card:active {
-  opacity: 0.7;
+  opacity: 70%;
 }
 
 .hovered-card-subtext {
@@ -939,5 +939,5 @@ svg {
 
 .btn-icon.active {
   box-shadow: none;
-  opacity: 0.8;
+  opacity: 80%;
 }
