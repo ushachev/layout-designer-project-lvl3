@@ -16,7 +16,7 @@ mixin message({ type, text, time } = {})
     }
     const avatarClass = 'd-none d-md-block align-self-md-end me-3'
 
-  li.col-md-9.d-md-flex.mb-3(class=itemClass)
+  li.col-md-9.d-flex.mb-3(class=itemClass)
     +avatar(author.avatar, author.name)(class=avatarClass, width=50, height=50)
     .p-4.rounded.shadow-sm(class=messageClass)
       if type === 'contact'
