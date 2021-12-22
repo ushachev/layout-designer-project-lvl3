@@ -21,5 +21,5 @@ mixin message({ type, text, time } = {})
     .p-4.rounded.shadow-sm(class=messageClass)
       if type === 'contact'
         h4.h6.text-dark= currentContact.name
-      p.mb-0(class=textClass, style='padding-bottom: 9px;')= text
-      small.d-block.pt-1.border-top(class=timeClass)= time
+      p.mb-0.pb-2.border-bottom(class=textClass)= text
+      small.pt-1(class=timeClass)= time

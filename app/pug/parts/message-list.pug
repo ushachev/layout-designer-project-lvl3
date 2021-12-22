@@ -9,12 +9,12 @@ include ../components/message.pug
   }
 
 .d-flex.flex-column.h-100.overflow-hidden
-  .d-flex.align-items-center.ps-3
+  .d-flex.align-items-center.ps-3.border-bottom
     +avatar(currentContact.avatar, currentContact.name)(width=50, height=50)
     .p-4.d-flex.flex-column
       h3.h6.mb-1= currentContact.name
-      small(style='padding-bottom: 1px;')= currentContact.status
-  ul.list-unstyled.hide-scrollbar.d-md-flex.flex-md-column.flex-grow-1.mb-0.pt-5.px-5.pb-4.border-top
+      small= currentContact.status
+  ul.list-unstyled.hide-scrollbar.d-md-flex.flex-md-column.flex-grow-1.mb-0.pt-5.px-5.pb-4
     each message in messages
       +message(message)
   form.d-flex.align-items-center.mx-md-5.ps-2.py-2.py-md-3.pe-3.pe-md-2.border-top
